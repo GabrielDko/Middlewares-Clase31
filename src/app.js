@@ -4,6 +4,7 @@ const cookieParser = require('cookie-parser');
 const express = require('express');
 const logger = require('morgan');
 const path = require('path');
+const logMiddleware = require("./middlewares/userLogs.js")
 
 // ************ express() - (don't touch) ************
 const app = express();
@@ -26,7 +27,7 @@ app.set('views', './src/views'); // Seteo de la ubicación de la carpeta "views"
 const mainRouter = require('./routes/main');
 app.use('/', mainRouter);
 
-
+app.use(logMiddleware)
 
 // ************ DON'T TOUCH FROM HERE ************
 // ************ catch 404 and forward to error handler ************
