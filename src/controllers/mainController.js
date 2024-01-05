@@ -1,4 +1,4 @@
-
+const {validationResult}=require("express-validator");
 
 const mainController = {
     index: (req,res)=>{
@@ -9,6 +9,15 @@ const mainController = {
     },
     design:(req,res)=>{
         res.send("Diseños!")
+    },
+    admin:(req,res)=>{
+        let errors = validationResult(req);
+        if(errors.isEmpty()){
+            res.send(`Hola Admin: ${req.query.user}`)
+        }else{
+            res.send(errors.mapped().user.msg)
+            console.log(errors.mapped());
+        }
     }
 }
 
