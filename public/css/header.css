@@ -1,0 +1,21 @@
+.header-box {
+    background-image: url("/images/Nodejs-banner-1.jpg");
+    padding: 30px;
+    width: 100%;
+    background-repeat: no-repeat;
+}
+.header-nav-box nav ul {
+    display: flex;
+    text-align: end;
+    gap: 20px;
+    width: 10%;
+}
+
+.header-nav-box nav ul li {
+    background-color: #fff;
+    box-shadow: 0 0 10px gray;
+    padding: 10px;
+    border-radius: 10px;
+    margin: auto;
+
+}
