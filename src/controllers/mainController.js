@@ -12,6 +12,7 @@ const mainController = {
     },
     admin:(req,res)=>{
         let errors = validationResult(req);
+        console.log(req.body);
         if(errors.isEmpty()){
             res.send(`Hola Admin: ${req.query.user}`)
         }else{

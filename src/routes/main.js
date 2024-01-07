@@ -1,14 +1,13 @@
 const express = require('express');
 const router = express.Router();
 const {index,services,design,admin} = require("../controllers/mainController")
-const {body} = require("express-validator");
+const {query} = require("express-validator");
 
 const validationAdmin = [
-    body("user").custom((value, {req})=>{
-        let user = req.query.user;
+    query("user").custom((value, {req})=>{
         let admins = ["ana", "greta", "vim", "tim"];
         for (let i = 0; i < admins.length;i++) {
-            if(admins[i]==user.toLowerCase()){
+            if(admins[i]==value.toLowerCase()){
                 return true
             }
 
